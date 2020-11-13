@@ -1,42 +1,36 @@
-/**
- * @file fairgame.cpp
- *
- * @version 01.01 2020-11-13
- *
- * @brief Allenamento OIS2020
- *
- * @ingroup fairgame
- * (Note: this needs exactly one @defgroup somewhere)
- *
- * @author Castellani Davide
- *
- * Contact: contacts@castellanidavide.it
- *
+/*
+ * This template is valid both in C and in C++,
+ * so you can expand it with code from both languages.
+ * NOTE: it is recommended to use this even if you don't
+ * understand the following code.
  */
 
-// Includes
-#include <bits/stdc++.h>
-using namespace std;
+#include <stdio.h>
+#include <assert.h>
 
-// Variabiles
-int N;
+// input data
+int N, K, M, P, Q;
 
-// Main code
-int main()
-{
-  // Cncomment the following lines if you want to read/write from files
-  // freopen("input.txt", "r", stdin);
-  // freopen("output.txt", "w", stdout);
+int main() {
+//  uncomment the following lines if you want to read/write from files
+    freopen("input.txt", "r", stdin);
+    freopen("output.txt", "w", stdout);
 
-  // Input
-  cin >> N;
+    assert(5 == scanf("%d%d%d%d%d", &N, &K, &M, &P, &Q));
 
-  // Code
-  // ...
+    int max_no_penality = K / 2;
+    max_no_penality *= 2;
 
-  // Output
-  cout << N << endl;
+    N = N % (max_no_penality * 2);
 
-  // End
-  return 0;
+    if (N % 2 == 0)
+    {
+        printf("%d\n", P - Q);
+    }
+    else
+    {
+        printf("%d\n", (P - Q) - M);
+    }
+
+    return 0;
 }
